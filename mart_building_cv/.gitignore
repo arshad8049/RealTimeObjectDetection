@@ -1,0 +1,40 @@
+# --- Python Virtual Environment ---
+# This is likely the source of thousands of your pending files.
+venv/
+/venv/
+
+# --- Python Cache & Compiled Files ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- AI/ML Model Weights & Data ---
+# Model files are large binaries and should be downloaded by your script,
+# not stored in Git. This is critical.
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# --- Ultralytics & OpenCV Output ---
+# The results of your model predictions, logs, and exports.
+runs/
+/runs/
+
+# --- IDE & Editor Configuration ---
+# Prevents sharing of personal editor settings.
+.vscode/
+.idea/
+
+# --- Operating System Files ---
+# macOS specific files.
+.DS_Store
+
+# --- Jupyter Notebook Checkpoints ---
+.ipynb_checkpoints/
+
+# --- Build & Distribution Artifacts ---
+build/
+dist/
+*.egg-info/
