@@ -1,0 +1,57 @@
+# configs/main_config.yaml
+
+# --- YOLO-World Settings ---
+yolo_model: 'yolov8s-world.pt' # Using the small, fast model for testing
+
+# --- Detection Prompts ---
+# Define the objects you want to detect in plain English
+detection_prompts:
+  # --- Waste Management ---
+  - 'overflowing trash bin'
+  - 'full trash bin'
+  - 'half-full trash bin'
+  - 'empty trash bin'
+  - 'recycling bin'
+  - 'cardboard box on floor'
+  - 'litter on floor'
+
+  # --- Safety & Hazard Detection ---
+  - 'spill on floor'
+  - 'puddle of water'
+  - 'wet floor sign'
+  - 'safety cone'
+  - 'blocked fire exit'
+  - 'fire extinguisher'
+  - 'fire alarm button'
+  - 'frayed cable'
+  - 'person slipping'
+
+  # --- Lost & Found Items ---
+  - 'unattended backpack'
+  - 'unattended suitcase'
+  - 'laptop'
+  - 'cell phone'
+  - 'wallet'
+  - 'keys'
+  - 'water bottle'
+  - 'notebook'
+  - 'jacket on chair'
+
+  # --- General Building & Occupancy ---
+  - 'person'
+  - 'person walking'
+  - 'person sitting'
+  - 'cleaning cart'
+  - 'mop and bucket'
+  - 'open door'
+  - 'closed door'
+  - 'cat'
+# --- Input Source ---
+# Use '0' for webcam, or provide a path to a video file e.g., '/path/to/video.mp4'
+input_source: 0
+
+# --- MQTT Broker Settings (for Phase 2) ---
+mqtt:
+  broker_address: "localhost" # Or your MQTT broker's IP
+  port: 1883
+  detection_topic: "smart-building/detections"
