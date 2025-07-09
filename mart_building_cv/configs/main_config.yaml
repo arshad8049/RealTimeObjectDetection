@@ -1,5 +1,11 @@
 # configs/main_config.yaml
 
+# --- Device Context (for MQTT Topic) ---
+# Defines the physical location of this device.
+device_context:
+  building: "House"
+  zone: "Living-room"
+
 # --- YOLO-World Settings ---
 yolo_model: 'yolov8s-world.pt' # Using the small, fast model for testing
 
@@ -46,12 +52,15 @@ detection_prompts:
   - 'open door'
   - 'closed door'
   - 'cat'
+  
 # --- Input Source ---
 # Use '0' for webcam, or provide a path to a video file e.g., '/path/to/video.mp4'
 input_source: 0
 
-# --- MQTT Broker Settings (for Phase 2) ---
+# --- MQTT Broker Settings ---
 mqtt:
+  enabled: true # Set to true to enable MQTT publishing
   broker_address: "localhost" # Or your MQTT broker's IP
   port: 1883
   detection_topic: "smart-building/detections"
+  message_interval_seconds: 10 # Cooldown in seconds before re-publishing a detection
